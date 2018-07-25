@@ -1,3 +1,3 @@
 FROM scratch
-ADD grafana-proxy main
-ENTRYPOINT ["./main"]
+ADD grafana-proxy grafana-proxy
+ENTRYPOINT ["./grafana-proxy"]
