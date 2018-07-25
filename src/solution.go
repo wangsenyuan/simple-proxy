@@ -15,6 +15,7 @@ import (
 
 var GRAFANA_ROOT_URL string
 var ADMIN_PASSWORD string
+var ADMIN_USER string
 
 func init() {
 	GRAFANA_ROOT_URL = os.Getenv("GRAFANA_ROOT_URL")
@@ -24,8 +25,10 @@ func init() {
 
 	ADMIN_PASSWORD = os.Getenv("ADMIN_PASSWORD")
 	if len(ADMIN_PASSWORD) == 0 {
-		ADMIN_PASSWORD = "maycur"
+		ADMIN_PASSWORD = "password"
 	}
+
+	ADMIN_USER = os.Getenv("ADMIN_USER")
 }
 
 func main() {
@@ -95,7 +98,7 @@ func tryAuth(w http.ResponseWriter, r *http.Request) bool {
 		}
 	}
 
-	if user != "maycur" || password != ADMIN_PASSWORD {
+	if user != ADMIN_USER || password != ADMIN_PASSWORD {
 		return false
 	}
 	t := time.Now()
