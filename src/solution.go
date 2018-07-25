@@ -25,7 +25,6 @@ func main() {
 
 func proxy(w http.ResponseWriter, r *http.Request) {
 	method := r.Method
-
 	if method == "GET" {
 		get(w, r)
 	} else if method == "POST" {
