@@ -1,4 +1,3 @@
 FROM scratch
-WORKDIR /app
-ADD grafana-proxy /app/main
+ADD grafana-proxy main
 ENTRYPOINT ["./main"]
