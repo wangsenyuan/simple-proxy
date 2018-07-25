@@ -14,7 +14,7 @@ var GRAFANA_ROOT_URL string
 func init() {
 	GRAFANA_ROOT_URL = os.Getenv("GRAFANA_ROOT_URL")
 	if len(GRAFANA_ROOT_URL) == 0 {
-		GRAFANA_ROOT_URL = "http://grafana:3000"
+		GRAFANA_ROOT_URL = "http://grafana.monitoring:3000"
 	}
 }
 
